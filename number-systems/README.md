@@ -14,7 +14,7 @@ Which is larger: 1000 or 0111?
 Answer: 1000
 
 Which is larger: 00100 or 01011?
-Answer: 01001
+Answer: 01011
 
 What is 10101 + 01010?
 Answer: 11111
