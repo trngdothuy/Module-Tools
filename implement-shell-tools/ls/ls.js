@@ -6,13 +6,13 @@ program
     .description("List all files name")
     .option("-1", "A new line for each file")
     .option("-a", "Show hidden files")
-    .argument("[path]", "The directory to list", ".");
+    .argument("[path]", "The directory to list");
 
 program.parse();
 
 let path = "";
 program.args.length == 0 ? path = '.' : path = program.args[0];
-let flags = program.opts()
+const flags = program.opts()
 
 try {
     let files = await fs.readdir(path);
