@@ -12,13 +12,13 @@ parser.add_argument("paths", nargs="+", help="The file path to process")
 
 args = parser.parse_args()
 paths = args.paths
+print(paths)
 
 for path in paths:
     try:
         with open(path, "r") as f:
             content = f.read()
-        lines = content.split("\n")
-        lines.pop()
+        lines = content.splitlines()
         
         line_num = 1
         
