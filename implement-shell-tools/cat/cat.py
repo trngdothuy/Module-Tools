@@ -23,14 +23,14 @@ for path in paths:
         
         for i in range(len(lines)):
             line = lines[i]
-            if args.n:
-                print(f"{line_num} {line}")
-                line_num += 1
-            
-            elif args.b:
+
+            if args.b:
                 if line != "":
                     print(f"{line_num} {line}")
                     line_num += 1
+            elif args.n:
+                print(f"{line_num} {line}")
+                line_num += 1
             else:
                 print(line)
 
