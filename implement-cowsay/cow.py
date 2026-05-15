@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(
     description="Make animals say things",
 )
 
-parser.add_argument("--animal", help="Choose the animal to draw", default="cow")
+parser.add_argument("--animal", help="Choose the animal to draw", default="cow", choices=cowsay.char_names)
 parser.add_argument("message", help="The sentence for animals to say", nargs="+")
 
 args = parser.parse_args()
