@@ -31,15 +31,21 @@ for path in args.paths:
         total_lines += lines
         total_words += word_count
         total_bytes += byte_count
-        
-        if args.l:
+            
+        if args.c and args.l:
+            print(f"{lines}      {byte_count}      {path}")
+        elif args.c and args.w:
+            print(f"{word_count}      {byte_count}      {path}")
+        elif args.l and args.w:
+            print(f"{lines}      {word_count}      {path}")
+        elif args.l:
             print(f"{lines}      {path}")
         elif args.w:
             print(f"{word_count}      {path}")
         elif args.c:
-            print(f"{bytes}      {path}")
+            print(f"{byte_count}      {path}")
         else:
-            print(f"{lines}      {word_count}       {bytes}      {path}")
+            print(f"{lines}      {word_count}       {byte_count}      {path}")
     except Exception as e:
         print(f"Error reading {path}: {e}")
         
