@@ -26,11 +26,11 @@ for path in args.paths:
             
         lines = len(content.split("\n")) - 1
         wordCount = len(content.strip().split())
-        bytes = len(buffer)
+        byte_count = len(buffer)
         
         totalLines += lines
         totalWords += wordCount
-        totalBytes += bytes
+        totalBytes += byte_count
         
         if args.l:
             print(f"{lines}      {path}")
