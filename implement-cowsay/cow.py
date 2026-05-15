@@ -8,11 +8,11 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument("--animal", help="Choose the animal to draw", default="cow")
-parser.add_argument("path", help="The sentence for animals to say", nargs="+")
+parser.add_argument("message", help="The sentence for animals to say", nargs="+")
 
 args = parser.parse_args()
 animal = args.animal
-text = args.path
+text = args.message
 
 try: 
     getattr(cowsay, animal)(" ".join(text))
