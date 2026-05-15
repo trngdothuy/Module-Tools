@@ -6,13 +6,12 @@ parser = argparse.ArgumentParser(
     description="Reading the file and print the content",
 )
 
-parser.add_argument("-n", help="Number all lines")
-parser.add_argument("-b", help="Number only lines with content")
+parser.add_argument("-n", action="store_true", help="Number all lines")
+parser.add_argument("-b", action="store_true", help="Number only lines with content")
 parser.add_argument("paths", nargs="+", help="The file path to process")
 
 args = parser.parse_args()
 paths = args.paths
-print(paths)
 
 for path in paths:
     try:
