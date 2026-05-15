@@ -15,7 +15,7 @@ args = parser.parse_args()
 path = args.path
 
 try:
-    files = os.listdir(path)
+    files = sorted(os.listdir(path))
     if not args.a:
         files = [file for file in files if not file.startswith(".")]
     if args.one:
