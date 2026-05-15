@@ -14,9 +14,9 @@ parser.add_argument("paths", nargs="+", help="The files to process")
 
 args = parser.parse_args()
 
-totalLines = 0
-totalWords = 0
-totalBytes = 0
+total_lines = 0
+total_words = 0
+total_bytes = 0
 
 for path in args.paths:
     try:
@@ -25,30 +25,30 @@ for path in args.paths:
         content = buffer.decode("utf-8") #, errors="ignore"
             
         lines = len(content.split("\n")) - 1
-        wordCount = len(content.strip().split())
+        word_count = len(content.strip().split())
         byte_count = len(buffer)
         
-        totalLines += lines
-        totalWords += wordCount
-        totalBytes += byte_count
+        total_lines += lines
+        total_words += word_count
+        total_bytes += byte_count
         
         if args.l:
             print(f"{lines}      {path}")
         elif args.w:
-            print(f"{wordCount}      {path}")
+            print(f"{word_count}      {path}")
         elif args.c:
             print(f"{bytes}      {path}")
         else:
-            print(f"{lines}      {wordCount}       {bytes}      {path}")
+            print(f"{lines}      {word_count}       {bytes}      {path}")
     except Exception as e:
         print(f"Error reading {path}: {e}")
         
 if len(args.paths) > 1:
     if args.l:
-        print(f"{totalLines}      total")
+        print(f"{total_lines}      total")
     elif args.w:
-        print(f"{totalWords}      total")
+        print(f"{total_words}      total")
     elif args.c:
-        print(f"{totalBytes}      total")
+        print(f"{total_bytes}      total")
     else:
-        print(f"{totalLines}      {totalWords}      {totalBytes}      total")
+        print(f"{total_lines}      {total_words}      {total_bytes}      total")
